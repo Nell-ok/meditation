@@ -1,0 +1,20 @@
+:root {
+  --vt-c-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: var(--vt-c-white);
+  background: var(--vt-c-white);
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
