@@ -1,5 +1,15 @@
 :root {
-  --vt-c-white: #ffffff;
+  --color-default-dark: #000000;
+  --color-default-light: #ffffff;
+  --color-dark-bg: #3a5051;
+  --color-light-bg: #f7f3f0;
+  --color-dark-button: #253334;
+  --color-hover-button: #202728;
+  --color-inactive: rgba(255, 255, 255, 0.5);
+  --color-hover-icon: #69b09c;
+
+  --font-alegreya: 'Alegreya', serif;
+  --font-alegreya-sans: 'Alegreya Sans', sans-serif;
 }
 
 *,
@@ -10,9 +20,9 @@
 }
 
 body {
-  color: var(--vt-c-white);
-  background: var(--vt-c-white);
-  font-family: Inter, sans-serif;
+  color: var(--color-default-light);
+  background: var(--color-dark-bg);
+  font-family: var(--font-alegreya-sans);
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
