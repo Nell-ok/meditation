@@ -18,7 +18,7 @@
   font-size: 15px;
   line-height: 18px;
   color: var(--color-default-light);
-  background-color: var(--color-dark-button);
+  background-color: var(--color-dark-bg);
   border-radius: 10px;
   border: none;
   cursor: pointer;
