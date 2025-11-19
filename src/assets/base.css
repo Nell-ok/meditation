@@ -1,9 +1,10 @@
 :root {
   --color-default-dark: #000000;
   --color-default-light: #ffffff;
-  --color-dark-bg: #3a5051;
+  --color-light: rgba(255, 255, 255, 0.7);
+  --color-dark-bg: #253334;
+  --color-border: rgba(58, 80, 81, 0.5);
   --color-light-bg: #f7f3f0;
-  --color-dark-button: #253334;
   --color-hover-button: #202728;
   --color-inactive: rgba(255, 255, 255, 0.5);
   --color-hover-icon: #69b09c;

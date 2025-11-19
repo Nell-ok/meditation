@@ -12,11 +12,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <ul class="main__list">
-    <li class="main__item" v-for="item in store.meditations" :key="item.id">
+  <ul class="meditations-list">
+    <li class="meditations-list__item" v-for="item in store.meditations" :key="item.id">
       <h3>{{ item.title }}</h3>
       <p>{{ item.description }}</p>
-      <div class="main__wrap-button">
+      <div class="meditations-list__wrap-button">
         <ButtonStart>Начать<IconsStart /></ButtonStart>
         <span>{{ item.duration_min }} мин</span>
       </div>
@@ -25,7 +25,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.main__list {
+.meditations-list {
   min-width: 700px;
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +35,7 @@ onMounted(() => {
   padding: 0;
 }
 
-.main__item {
+.meditations-list__item {
   max-width: 339px;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ onMounted(() => {
   border-radius: 20px;
 }
 
-.main__item h3 {
+.meditations-list__item h3 {
   font-family: var(--font-alegreya);
   font-weight: 500;
   font-size: 25px;
@@ -52,20 +52,20 @@ onMounted(() => {
   color: var(--color-default-dark);
 }
 
-.main__item p {
+.meditations-list__item p {
   font-weight: 500;
   line-height: 18px;
   color: var(--color-default-dark);
 }
 
-.main__wrap-button {
+.meditations-list__wrap-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 16px;
 }
 
-.main__wrap-button span {
+.meditations-list__wrap-button span {
   font-weight: 500;
   line-height: 18px;
   color: var(--color-default-dark);
