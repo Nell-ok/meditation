@@ -1,7 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  type: string;
+  value: number;
+}>();
+const emit = defineEmits<{
+  (e: 'select', type: string, value: number): void;
+}>();
+function handleClick() {
+  emit('select', props.type, props.value);
+}
+</script>
 
 <template>
-  <button class="states-list__button">
+  <button class="states-list__button" @click="handleClick">
     <slot />
   </button>
 </template>
