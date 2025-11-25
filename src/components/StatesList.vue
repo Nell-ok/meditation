@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { StatesData } from '@/data/states';
 import ButtonState from './ButtonState.vue';
+import { API_ROUTES, client } from '@/api';
+
+async function saveFeeling(type: string, value: number) {
+  await client().post(`${API_ROUTES.stats}`, { type, value });
+}
 </script>
 
 <template>
   <ul class="states-list">
     <li class="states-list__item" v-for="state in StatesData" :key="state.name">
-      <ButtonState><component :is="state.icon" /></ButtonState>
+      <ButtonState :type="state.type" :value="state.value" @select="saveFeeling"
+        ><component :is="state.icon"
+      /></ButtonState>
       <span>{{ state.name }}</span>
     </li>
   </ul>

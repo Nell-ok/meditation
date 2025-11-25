@@ -1,14 +1,23 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 import IconLogo from './icons/IconLogo.vue';
 import IconNavExit from './icons/IconNavExit.vue';
 import IconNavMeditation from './icons/IconNavMeditation.vue';
 import IconNavStatistics from './icons/IconNavStatistics.vue';
+import { useAuthStore } from '@/stores/auth.store';
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+function logout() {
+  authStore.clearToken();
+  router.push({ name: 'welcome' });
+}
 </script>
 
 <template>
   <a class="logo">
-    <IconLogo />
+    <IconLogo width="76" height="86" />
   </a>
   <nav class="nav">
     <ul class="nav__list">
@@ -29,12 +38,18 @@ import IconNavStatistics from './icons/IconNavStatistics.vue';
         </RouterLink>
       </li>
       <li class="nav__item">
-        <RouterLink active-class="active-link" :to="{ name: 'Welcom' }">
+        <a active-class="active-link" @click="logout">
           <div>
             <IconNavExit />
           </div>
           Выход
-        </RouterLink>
+        </a>
+        <!--<RouterLink active-class="active-link" :to="{ name: 'welcome' }">
+          <div>
+            <IconNavExit />
+          </div>
+          Выход
+        </RouterLink>-->
       </li>
     </ul>
   </nav>

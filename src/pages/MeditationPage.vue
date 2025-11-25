@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import MeditationsList from '@/components/MeditationsList.vue';
 import StatesList from '@/components/StatesList.vue';
+import { useProfileStore } from '@/stores/profile.store';
+import { onMounted } from 'vue';
+
+const profileStore = useProfileStore();
+
+onMounted(() => {
+  profileStore.fetchProfile();
+});
 </script>
 
 <template>
@@ -10,7 +18,7 @@ import StatesList from '@/components/StatesList.vue';
         <img src="/public/avatar.png" alt="изображение пользователя" />
       </div>
       <div class="meditations__wrap-text">
-        <h2>Добро пожаловать, Наталья!</h2>
+        <h2>Добро пожаловать, {{ profileStore.profile?.data.user.username }}</h2>
         <p>Как вы сегодня себя чувствуете?</p>
       </div>
       <StatesList />
